@@ -51,7 +51,7 @@ sub const {
 
 my $DATASET = {};
 {
-    # GENERATED from dataset.yaml at Tue Sep 10 14:44:27 JST 2013 by tagomoris
+    # GENERATED from dataset.yaml at Wed Nov 13 18:39:05 JST 2013 by tagomoris
     my $obj;
     $obj = {label => 'MSIE', name => 'Internet Explorer', type => 'browser'};
     $obj->{vendor} = 'Microsoft';
