@@ -52,5 +52,19 @@
       }
    },
    "release_status" : "unstable",
-   "version" : "0.3.4"
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/woothee/woothee-perl/issues"
+      },
+      "homepage" : "https://github.com/woothee/woothee-perl",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/woothee/woothee-perl.git",
+         "web" : "https://github.com/woothee/woothee-perl"
+      }
+   },
+   "version" : "0.3.4",
+   "x_contributors" : [
+      "TAGOMORI Satoshi <tagomoris@gmail.com>"
+   ]
 }
