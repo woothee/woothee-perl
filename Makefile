@@ -6,7 +6,7 @@ testsets:
 checkyaml: testsets
 	perl woothee/bin/dataset_checker.pl
 
-lib/Woothee/DataSet.pm: testsets
+lib/Woothee/DataSet.pm: checkyaml
 	perl maint/dataset_yaml2pm.pl
 	sync; sync; sync;
 
