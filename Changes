@@ -1,6 +1,8 @@
 Revision history for Perl module Woothee
 
 {{$NEXT}}
+
+0.3.5 2013-12-03T10:26:11Z
    - add PlayStation 4, Xbox 360 and Xbox One
 
 0.3.4 Tue Sep 10 15:25:33 JST 2013
