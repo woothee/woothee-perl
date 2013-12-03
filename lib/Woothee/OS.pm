@@ -7,12 +7,26 @@ use Carp;
 use Woothee::Util qw/update_map update_category update_version update_os/;
 use Woothee::DataSet qw/dataset/;
 
-our $VERSION = "0.3.4";
+our $VERSION = "0.3.5";
 
 sub challenge_windows {
     my ($ua, $result) = @_;
 
     return 0 if index($ua, "Windows") < 0;
+
+    # Xbox Series
+    if (index($ua, "Xbox") > -1) {
+        my $data;
+        if ($ua =~ m{Xbox; Xbox One\)}) {
+            $data = dataset("XboxOne");
+        }
+        else {
+            $data = dataset("Xbox360");
+        }
+        # overwrite browser detections as appliance
+        update_map($result, $data);
+        return 1;
+    }
 
     my $data = dataset("Win");
 

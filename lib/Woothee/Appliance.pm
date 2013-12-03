@@ -7,7 +7,7 @@ use Carp;
 use Woothee::Util qw/update_map update_category update_version update_os/;
 use Woothee::DataSet qw/dataset/;
 
-our $VERSION = "0.3.1";
+our $VERSION = "0.3.5";
 
 sub challenge_playstation {
     my ($ua, $result) = @_;
@@ -22,6 +22,9 @@ sub challenge_playstation {
     }
     elsif (index($ua, "PLAYSTATION 3 ") > -1 || index($ua, "PLAYSTATION 3;") > -1) {
         $data = dataset("PS3");
+    }
+    elsif (index($ua, "PlayStation 4 ") > -1) {
+        $data = dataset("PS4");
     }
 
     return 0 unless $data;
@@ -53,6 +56,8 @@ sub challenge_nintendo {
     update_map($result, $data);
     return 1;
 }
+
+# for Xbox Series, see OS.pm (Windows)
 
 sub challenge_digitaltv {
     my ($ua, $result) = @_;

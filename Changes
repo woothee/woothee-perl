@@ -1,5 +1,8 @@
 Revision history for Perl module Woothee
 
+{{$NEXT}}
+   - add PlayStation 4, Xbox 360 and Xbox One
+
 0.3.4 Tue Sep 10 15:25:33 JST 2013
    - add Firefox OS
 
