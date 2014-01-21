@@ -2,6 +2,9 @@ Revision history for Perl module Woothee
 
 {{$NEXT}}
 
+0.3.6 2014-01-21T09:02:21Z
+   - add deps on test, for perl without YAML
+
 0.3.5 2013-12-03T10:26:11Z
    - add PlayStation 4, Xbox 360 and Xbox One
 
