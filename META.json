@@ -47,6 +47,8 @@
       },
       "test" : {
          "requires" : {
+            "File::Find::Rule" : "0",
+            "Path::Class" : "0",
             "Test::More" : "0.98",
             "YAML" : "0"
          }
