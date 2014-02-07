@@ -7,7 +7,7 @@ use Carp;
 use Woothee::Util qw/update_map update_category update_version update_os/;
 use Woothee::DataSet qw/dataset/;
 
-our $VERSION = "0.3.7";
+our $VERSION = "0.3.8";
 
 sub challenge_desktoptools {
     my ($ua, $result) = @_;
