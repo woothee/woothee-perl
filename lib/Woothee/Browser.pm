@@ -27,7 +27,7 @@ sub challenge_msie {
     return 1;
 }
 
-sub challenge_safari_chrome {
+sub challenge_safari_chrome { # and Opera(blink)
     my ($ua,$result) = @_;
 
     return 0 if index($ua, "Safari/") < 0;
@@ -35,6 +35,14 @@ sub challenge_safari_chrome {
     my $version = Woothee::DataSet->const('VALUE_UNKNOWN');
 
     if ($ua =~ m{(?:Chrome|CrMo|CriOS)/([.0-9]+)}o) {
+        # Opera (blink)
+        if ($ua =~ m{OPR/([.0-9]+)}o) {
+            $version = $1;
+            update_map($result, dataset("Opera"));
+            update_version($result, $version);
+            return 1;
+        }
+
         # Chrome
         $version = $1;
         update_map($result, dataset("Chrome"));
