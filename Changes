@@ -1,6 +1,7 @@
 Revision history for Perl module Woothee
 
 {{$NEXT}}
+   - fix Opera (w/ blink) support
 
 0.3.8 2014-02-07T11:06:00Z
    - update MSIE11 support (previsous version is broken.)
