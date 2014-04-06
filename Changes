@@ -2,6 +2,9 @@ Revision history for Perl module Woothee
 
 {{$NEXT}}
 
+0.4.0 2014-04-06T05:57:48Z
+   - bump version up (w/ other lang imps)
+
 0.3.9 2014-04-02T03:51:04Z
    - fix Opera (w/ blink) support
 
