@@ -68,7 +68,7 @@ sub challenge_osx {
             $data = dataset("iPhone");
         }elsif (index($ua, "iPad;") > -1) {
             $data = dataset("iPad");
-        }elsif (index($ua, "iPod;") > -1) {
+        }elsif (index($ua, "iPod") > -1) {
             $data = dataset("iPod");
         }
     }
