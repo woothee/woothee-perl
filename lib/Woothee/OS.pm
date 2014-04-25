@@ -204,6 +204,9 @@ sub challenge_misc {
     elsif (index($ua, "X11; FreeBSD ") > -1) {
         $data = dataset("BSD");
     }
+    elsif (index($ua, "X11; CrOS ") > -1) {
+        $data = dataset("ChromeOS");
+    }
 
     if ($data) {
         update_category($result, $data->{Woothee::DataSet->const('KEY_CATEGORY')});
