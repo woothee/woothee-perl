@@ -66,8 +66,9 @@
          "web" : "https://github.com/woothee/woothee-perl"
       }
    },
-   "version" : "0.4.0",
+   "version" : "0.4.1",
    "x_contributors" : [
+      "hitode909 <hitode909@gmail.com>",
       "TAGOMORI Satoshi <tagomoris@gmail.com>"
    ]
 }

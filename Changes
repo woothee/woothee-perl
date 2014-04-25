@@ -1,6 +1,8 @@
 Revision history for Perl module Woothee
 
 {{$NEXT}}
+
+0.4.1 2014-04-25T03:41:00Z
    - add support of ChromeOS/FirefoxOS Tablet/iPod touch iOS7
 
 0.4.0 2014-04-06T05:57:48Z
