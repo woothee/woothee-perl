@@ -113,9 +113,10 @@ sub challenge_smartphone {
 
     if ($result->{Woothee::DataSet->const('KEY_NAME')} and
             $result->{Woothee::DataSet->const('KEY_NAME')} eq dataset('Firefox')->{Woothee::DataSet->const('KEY_NAME')}) {
-        # Firefox OS specific pattern
+        # Firefox OS (phone/tablet) specific pattern
         # http://lawrencemandel.com/2012/07/27/decision-made-firefox-os-user-agent-string/
-        if ($ua =~ m!^Mozilla/[.0-9]+ \(Mobile;(.*;)? rv:[.0-9]+\) Gecko/[.0-9]+ Firefox/[.0-9]+$!) {
+        # https://github.com/woothee/woothee/issues/2
+        if ($ua =~ m!^Mozilla/[.0-9]+ \((?:Mobile|Tablet);(.*;)? rv:[.0-9]+\) Gecko/[.0-9]+ Firefox/[.0-9]+$!) {
             $data = dataset("FirefoxOS");
         }
     }
