@@ -17,7 +17,7 @@ sub challenge_msie {
     my $version;
     if ($ua =~ m{MSIE ([.0-9]+);}o) {
         $version = $1;
-    } elsif ($ua =~ m{Trident/([.0-9]+); rv:([.0-9]+)}o) {
+    } elsif ($ua =~ m{Trident/([.0-9]+);(?: BOIE[0-9]+;[A-Z]+;)? rv:([.0-9]+)}o) {
         $version = $2;
     } else {
         $version = Woothee::DataSet->const('VALUE_UNKNOWN');
