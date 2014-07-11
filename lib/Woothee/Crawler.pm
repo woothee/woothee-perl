@@ -69,6 +69,10 @@ sub challenge_crawlers {
             update_map($result, dataset("YahooJP"));
             return 1;
         }
+        elsif (index($ua, 'Y!J-BRZ/YATSHA crawler') > -1 || index($ua, 'Y!J-BRY/YATSH crawler') > -1) {
+            update_map($result, dataset('YahooJP'));
+            return 1;
+        }
         elsif (index($ua, "Yahoo Pipes") > -1) {
             update_map($result, dataset("YahooPipes"));
             return 1;
