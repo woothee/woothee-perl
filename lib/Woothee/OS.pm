@@ -43,7 +43,7 @@ sub challenge_windows {
     elsif ($version eq "NT 6.1") { $data = dataset("Win7"); }
     elsif ($version eq "NT 6.0") { $data = dataset("WinVista"); }
     elsif ($version eq "NT 5.1") { $data = dataset("WinXP"); }
-    elsif ($version =~ /^Phone OS/o) { $data = dataset("WinPhone"); }
+    elsif ($version =~ /^Phone/o) { $data = dataset("WinPhone"); }
     elsif ($version eq "NT 5.0") { $data = dataset("Win2000"); }
     elsif ($version eq "NT 4.0") { $data = dataset("WinNT4"); }
     elsif ($version eq "98") { $data = dataset("Win98"); } # wow, WinMe is shown as 'Windows 98; Win9x 4.90', fxxxk

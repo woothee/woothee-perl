@@ -12,13 +12,15 @@ our $VERSION = "0.4.2";
 sub challenge_msie {
     my ($ua,$result) = @_;
 
-    return 0 if index($ua, "compatible; MSIE") < 0 and index($ua, "Trident/") < 0;
+    return 0 if index($ua, "compatible; MSIE") < 0 and index($ua, "Trident/") < 0 and index($ua, "IEMobile");
 
     my $version;
     if ($ua =~ m{MSIE ([.0-9]+);}o) {
         $version = $1;
     } elsif ($ua =~ m{Trident/([.0-9]+);(?: BOIE[0-9]+;[A-Z]+;)? rv:([.0-9]+)}o) {
         $version = $2;
+    } elsif ($ua =~ m{IEMobile/([.0-9]+);}o) {
+        $version = $1;
     } else {
         $version = Woothee::DataSet->const('VALUE_UNKNOWN');
     }
