@@ -12,7 +12,7 @@ our (@ISA, @EXPORT_OK);
 BEGIN {
     require Exporter;
     our @ISA = qw(Exporter);
-    our @EXPORT_OK = qw(update_map update_category update_version update_os);
+    our @EXPORT_OK = qw(update_map update_category update_version update_os update_os_version);
 }
 
 sub update_map {
@@ -38,6 +38,11 @@ sub update_version {
 sub update_os {
     my ($target,$os) = @_;
     $target->{Woothee::DataSet->const('ATTRIBUTE_OS')} = $os;
+}
+
+sub update_os_version {
+    my ($target,$os_version) = @_;
+    $target->{Woothee::DataSet->const('ATTRIBUTE_OS_VERSION')} = $os_version;
 }
 
 1;

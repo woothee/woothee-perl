@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use Carp;
 
-use Woothee::Util qw/update_map update_category update_version update_os/;
+use Woothee::Util qw/update_map update_category update_version update_os update_os_version/;
 use Woothee::DataSet qw/dataset/;
 
 our $VERSION = "0.4.2";

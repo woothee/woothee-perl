@@ -17,6 +17,7 @@ my $CONST = {
     KEY_TYPE => "type",
     KEY_CATEGORY => "category",
     KEY_OS => "os",
+    KEY_OS_VERSION => "os_version",
     KEY_VENDOR => "vendor",
     KEY_VERSION => "version",
 
@@ -34,6 +35,7 @@ my $CONST = {
     ATTRIBUTE_NAME => "name",
     ATTRIBUTE_CATEGORY => "category",
     ATTRIBUTE_OS => "os",
+    ATTRIBUTE_OS_VERSION => "os_version",
     ATTRIBUTE_VENDOR => "vendor",
     ATTRIBUTE_VERSION => "version",
 
@@ -51,7 +53,7 @@ sub const {
 
 my $DATASET = {};
 {
-    # GENERATED from dataset.yaml at Fri Apr 25 12:34:32 JST 2014 by tagomoris
+    # GENERATED from dataset.yaml at Fri Oct 17 13:24:37 JST 2014 by tagomoris
     my $obj;
     $obj = {label => 'MSIE', name => 'Internet Explorer', type => 'browser'};
     $obj->{vendor} = 'Microsoft';
