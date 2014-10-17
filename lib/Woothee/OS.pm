@@ -71,12 +71,18 @@ sub challenge_osx {
 
     if (index($ua, "like Mac OS X") > -1) {
         # iOS
+        # (iPhone; CPU iPhone OS 5_0_1 like Mac OS X)
+        # (iPad; U; CPU OS 4_3_2 like Mac OS X; ja-jp)
         if (index($ua, "iPhone;") > -1) {
             $data = dataset("iPhone");
         }elsif (index($ua, "iPad;") > -1) {
             $data = dataset("iPad");
         }elsif (index($ua, "iPod") > -1) {
             $data = dataset("iPod");
+        }
+        if ($ua =~ /; CPU(?: iPhone)? OS (\d+_\d+(?:_\d+)?) like Mac OS X/) {
+            $version = $1;
+            $version =~ s/_/./g;
         }
     } else {
         # OSX
