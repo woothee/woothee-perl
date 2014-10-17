@@ -63,8 +63,14 @@ sub challenge_osx {
 
     return 0 if index($ua, "Mac OS X") < 0;
 
+    # (Macintosh; U; Intel Mac OS X 10_5_4; ja-jp)
+    # (Macintosh; Intel Mac OS X 10_9_2)
+    # (Macintosh; U; PPC Mac OS X 10.5; ja-JP-mac; rv:1.9.1.19)
     my $data = dataset("OSX");
+    my $version;
+
     if (index($ua, "like Mac OS X") > -1) {
+        # iOS
         if (index($ua, "iPhone;") > -1) {
             $data = dataset("iPhone");
         }elsif (index($ua, "iPad;") > -1) {
@@ -72,9 +78,18 @@ sub challenge_osx {
         }elsif (index($ua, "iPod") > -1) {
             $data = dataset("iPod");
         }
+    } else {
+        # OSX
+        if ($ua =~ /Mac OS X (10[._]\d+(?:[._]\d+)?)(?:\)|;)/) {
+            $version = $1;
+            $version =~ s/_/./g;
+        }
     }
     update_category($result, $data->{Woothee::DataSet->const('KEY_CATEGORY')});
     update_os($result, $data->{Woothee::DataSet->const('KEY_NAME')});
+    if ($version){
+        update_os_version($result, $version);
+    }
     return 1;
 }
 
@@ -202,12 +217,24 @@ sub challenge_misc {
         $os_version = "98";
     }
     elsif (index($ua, "Macintosh; U; PPC;") > -1 || index($ua, "Mac_PowerPC") > -1) {
+        # (Macintosh; U; PPC; en-US; mimic; rv:9.2.1)
+        if ($ua =~ /rv:(\d+\.\d+\.\d+)/) {
+            $os_version = $1;
+        }
         $data = dataset("MacOS");
     }
     elsif (index($ua, "X11; FreeBSD ") > -1) {
+        # (X11; FreeBSD 8.2-RELEASE-p3 amd64; U; ja)
+        if ($ua =~ /FreeBSD ([^;\)]+);/) {
+            $os_version = $1;
+        }
         $data = dataset("BSD");
     }
     elsif (index($ua, "X11; CrOS ") > -1) {
+        # (X11; CrOS x86_64 5116.115.4)
+        if ($ua =~ /CrOS ([^\)]+)\)/) {
+            $os_version = $1;
+        }
         $data = dataset("ChromeOS");
     }
 
