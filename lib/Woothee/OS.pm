@@ -54,6 +54,7 @@ sub challenge_windows {
 
     update_category($result, $data->{Woothee::DataSet->const('KEY_CATEGORY')});
     update_os($result, $data->{Woothee::DataSet->const('KEY_NAME')});
+    update_os_version($result, $version);
     return 1;
 }
 
@@ -194,9 +195,11 @@ sub challenge_misc {
     my ($ua, $result) = @_;
 
     my $data;
+    my $os_version;
 
     if (index($ua, "(Win98;") > -1) {
         $data = dataset("Win98");
+        $os_version = "98";
     }
     elsif (index($ua, "Macintosh; U; PPC;") > -1 || index($ua, "Mac_PowerPC") > -1) {
         $data = dataset("MacOS");
@@ -211,6 +214,9 @@ sub challenge_misc {
     if ($data) {
         update_category($result, $data->{Woothee::DataSet->const('KEY_CATEGORY')});
         update_os($result, $data->{Woothee::DataSet->const('KEY_NAME')});
+        if ($os_version) {
+            update_os_version($result, $os_version);
+        }
         return 1;
     }
 
