@@ -22,6 +22,9 @@ sub run_testset {
         if (exists $entry->{os}) {
             is ($r->{os}, $entry->{os}, message($set_name, $entry->{target}, "os"));
         }
+        if (exists $entry->{os_version}) {
+            is ($r->{os_version}, $entry->{os_version}, message($set_name, $entry->{target}, "os_version"));
+        }
         if (exists $entry->{version}) {
             is ($r->{version}, $entry->{version}, message($set_name, $entry->{target}, "version"));
         }

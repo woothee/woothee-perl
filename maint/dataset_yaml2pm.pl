@@ -126,6 +126,7 @@ my $CONST = {
     KEY_TYPE => "type",
     KEY_CATEGORY => "category",
     KEY_OS => "os",
+    KEY_OS_VERSION => "os_version",
     KEY_VENDOR => "vendor",
     KEY_VERSION => "version",
 
@@ -143,6 +144,7 @@ my $CONST = {
     ATTRIBUTE_NAME => "name",
     ATTRIBUTE_CATEGORY => "category",
     ATTRIBUTE_OS => "os",
+    ATTRIBUTE_OS_VERSION => "os_version",
     ATTRIBUTE_VENDOR => "vendor",
     ATTRIBUTE_VERSION => "version",
 
