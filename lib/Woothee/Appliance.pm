@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use Carp;
 
-use Woothee::Util qw/update_map update_category update_version update_os/;
+use Woothee::Util qw/update_map update_category update_version update_os update_os_version/;
 use Woothee::DataSet qw/dataset/;
 
 our $VERSION = "0.4.2";
@@ -13,23 +13,40 @@ sub challenge_playstation {
     my ($ua, $result) = @_;
 
     my $data;
+    my $os_version;
 
     if (index($ua, "PSP (PlayStation Portable);") > -1) {
+        if ($ua =~ m!PSP \(PlayStation Portable\); ([.0-9]+)\)!) {
+            $os_version = $1;
+        }
         $data = dataset("PSP");
     }
     elsif (index($ua, "PlayStation Vita") > -1) {
+        if ($ua =~ m!PlayStation Vita ([.0-9]+)\)!) {
+            $os_version = $1;
+        }
+        $data = dataset("PSP");
         $data = dataset("PSVita");
     }
     elsif (index($ua, "PLAYSTATION 3 ") > -1 || index($ua, "PLAYSTATION 3;") > -1) {
+        if ($ua =~ m!PLAYSTATION 3;? ([.0-9]+)\)!) {
+            $os_version = $1;
+        }
         $data = dataset("PS3");
     }
     elsif (index($ua, "PlayStation 4 ") > -1) {
+        if ($ua =~ m!PlayStation 4 ([.0-9]+)\)!) {
+            $os_version = $1;
+        }
         $data = dataset("PS4");
     }
 
     return 0 unless $data;
 
     update_map($result, $data);
+    if ($os_version) {
+        update_os_version($result, $os_version);
+    }
     return 1;
 }
 
