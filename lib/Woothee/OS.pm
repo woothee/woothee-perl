@@ -105,13 +105,24 @@ sub challenge_linux {
     return 0 if index($ua, "Linux") < 0;
 
     my $data;
+    my $os_version;
     if (index($ua, "Android") > -1 ) {
+        # (Linux; U; Android 2.3.5; ja-jp; ISW11F Build/FGK500)
+        # (Linux; U; Android 3.1; ja-jp; L-06C Build/HMJ37)
+        # (Linux; U; Android-4.0.3; en-us; Galaxy Nexus Build/IML74K)
+        # (Linux; Android 4.2.2; SO-01F Build/14.1.H.1.281)
         $data = dataset("Android");
+        if ($ua =~ /Android[- ](\d+\.\d+(?:\.\d+)?)/) {
+            $os_version = $1;
+        }
     }else {
         $data = dataset("Linux");
     }
     update_category($result, $data->{Woothee::DataSet->const('KEY_CATEGORY')});
     update_os($result, $data->{Woothee::DataSet->const('KEY_NAME')});
+    if ($os_version) {
+        update_os_version($result, $os_version);
+    }
     return 1;
 }
 
