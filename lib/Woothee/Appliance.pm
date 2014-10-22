@@ -25,7 +25,6 @@ sub challenge_playstation {
         if ($ua =~ m!PlayStation Vita ([.0-9]+)\)!) {
             $os_version = $1;
         }
-        $data = dataset("PSP");
         $data = dataset("PSVita");
     }
     elsif (index($ua, "PLAYSTATION 3 ") > -1 || index($ua, "PLAYSTATION 3;") > -1) {
