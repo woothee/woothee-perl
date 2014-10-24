@@ -9,7 +9,7 @@ For Woothee, see https://github.com/woothee/woothee
     use Woothee;
 
     Woothee->parse("Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0)");
-    # => {'name'=>"Internet Explorer", 'category'=>"pc", 'os'=>"Windows 7", 'version'=>"8.0", 'vendor'=>"Microsoft"}
+    # => {'name'=>"Internet Explorer", 'category'=>"pc", 'os'=>"Windows 7", 'version'=>"8.0", 'vendor'=>"Microsoft", 'os_version'=>"NT 6.1"}
 
     Woothee->is_crawler('Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)');
     # => 1
@@ -35,6 +35,7 @@ For unknown user-agent (or partially failed to parse), result hashref may have v
 - 'version' is version string, like '8.0' for IE, '9.0.1' for Firefix, '0.2.149.27' for Chrome, and so on.
 - 'os' is like 'Windows 7', 'Mac OSX', 'iPhone', 'iPad', 'Android'. This field used to indicate cellar phone carrier for category 'mobilephone'.
 - 'vendor' is optional field, shows browser vendor.
+- 'os_version' is version string of operating systems, like 'NT 6.1', '10.8.1' or so, if it is parsed.
 
 ### `Woothee->is_crawler( $useragent ) :Bool`
 

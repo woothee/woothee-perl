@@ -215,6 +215,7 @@ my @filled = (
     Woothee::DataSet->const('ATTRIBUTE_NAME') => Woothee::DataSet->const('VALUE_UNKNOWN'),
     Woothee::DataSet->const('ATTRIBUTE_CATEGORY') => Woothee::DataSet->const('VALUE_UNKNOWN'),
     Woothee::DataSet->const('ATTRIBUTE_OS') => Woothee::DataSet->const('VALUE_UNKNOWN'),
+    Woothee::DataSet->const('ATTRIBUTE_OS_VERSION') => Woothee::DataSet->const('VALUE_UNKNOWN'),
     Woothee::DataSet->const('ATTRIBUTE_VERSION') => Woothee::DataSet->const('VALUE_UNKNOWN'),
     Woothee::DataSet->const('ATTRIBUTE_VENDOR') => Woothee::DataSet->const('VALUE_UNKNOWN'),
 );
