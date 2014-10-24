@@ -2,6 +2,9 @@ Revision history for Perl module Woothee
 
 {{$NEXT}}
 
+1.0.0 2014-10-24T07:32:20Z
+   - add "os_version" support
+
 0.4.2 2014-07-11T07:09:54Z
    - add support for Bing Optimized MSIE
    - add support for Yahoo! Japan smartphone crawler
