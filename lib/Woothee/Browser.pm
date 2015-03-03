@@ -98,6 +98,30 @@ sub challenge_opera {
     return 1;
 }
 
+sub challenge_webview {
+    my ($ua,$result) = @_;
+
+
+    my $version = Woothee::DataSet->const('VALUE_UNKNOWN');
+
+    # iOS
+    if ($ua =~ m{iP(hone;|ad;|od) .*like Mac OS X}o) {
+        return 0 if index($ua, "Safari/") > -1;
+
+        if ($ua =~ m{Version/([.0-9]+)}o) {
+            $version = $1;
+        }
+
+        update_version($result, $version);
+        update_map($result, dataset("Webview"));
+        return 1;
+    }
+
+    return 0;
+    #update_version($result, $version);
+}
+
+
 sub challenge_sleipnir {
     my ($ua,$result) = @_;
 

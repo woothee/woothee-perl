@@ -33,9 +33,11 @@ foreach my $dataset (@$dataset_entries) {
 EOD
     if ($type eq 'browser') {
         my $vendor = $dataset->{vendor};
-        $def .= <<"EOD";
+        if ($vendor) {
+            $def .= <<"EOD";
     \$obj->{vendor} = '$vendor';
 EOD
+        }
     }
     elsif ($type eq 'os') {
         my $category = $dataset->{category};
