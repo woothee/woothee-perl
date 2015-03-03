@@ -118,7 +118,6 @@ sub challenge_webview {
     }
 
     return 0;
-    #update_version($result, $version);
 }
 
 
