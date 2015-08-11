@@ -53,11 +53,14 @@ sub const {
 
 my $DATASET = {};
 {
-    # GENERATED from dataset.yaml at Tue Mar  3 21:16:26 JST 2015 by yusuke.enomoto
+    # GENERATED from dataset.yaml at Tue Aug 11 14:50:12 JST 2015 by tagomoris
     my $obj;
     $obj = {label => 'MSIE', name => 'Internet Explorer', type => 'browser'};
     $obj->{vendor} = 'Microsoft';
     $DATASET->{'MSIE'} = $obj;
+    $obj = {label => 'Edge', name => 'Edge', type => 'browser'};
+    $obj->{vendor} = 'Microsoft';
+    $DATASET->{'Edge'} = $obj;
     $obj = {label => 'Chrome', name => 'Chrome', type => 'browser'};
     $obj->{vendor} = 'Google';
     $DATASET->{'Chrome'} = $obj;
@@ -74,10 +77,14 @@ my $DATASET = {};
     $obj->{vendor} = 'Fenrir Inc.';
     $DATASET->{'Sleipnir'} = $obj;
     $obj = {label => 'Webview', name => 'Webview', type => 'browser'};
+    $obj->{vendor} = 'OS vendor';
     $DATASET->{'Webview'} = $obj;
     $obj = {label => 'Win', name => 'Windows UNKNOWN Ver', type => 'os'};
     $obj->{category} = 'pc';
     $DATASET->{'Win'} = $obj;
+    $obj = {label => 'Win10', name => 'Windows 10', type => 'os'};
+    $obj->{category} = 'pc';
+    $DATASET->{'Win10'} = $obj;
     $obj = {label => 'Win8.1', name => 'Windows 8.1', type => 'os'};
     $obj->{category} = 'pc';
     $DATASET->{'Win8.1'} = $obj;
@@ -150,6 +157,9 @@ my $DATASET = {};
     $obj = {label => 'BlackBerry', name => 'BlackBerry', type => 'os'};
     $obj->{category} = 'smartphone';
     $DATASET->{'BlackBerry'} = $obj;
+    $obj = {label => 'BlackBerry10', name => 'BlackBerry 10', type => 'os'};
+    $obj->{category} = 'smartphone';
+    $DATASET->{'BlackBerry10'} = $obj;
     $obj = {label => 'docomo', name => 'docomo', type => 'full'};
     $obj->{category} = 'mobilephone';
     $obj->{vendor} = 'docomo';
