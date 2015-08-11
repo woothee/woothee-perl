@@ -36,6 +36,14 @@ sub challenge_safari_chrome { # and Opera(blink)
 
     my $version = Woothee::DataSet->const('VALUE_UNKNOWN');
 
+    if ($ua =~ m{Edge/([.0-9]+)}o) {
+        # MS Edge
+        $version = $1;
+        update_map($result, dataset("Edge"));
+        update_version($result, $version);
+        return 1;
+    }
+
     if ($ua =~ m{(?:Chrome|CrMo|CriOS)/([.0-9]+)}o) {
         # Opera (blink)
         if ($ua =~ m{OPR/([.0-9]+)}o) {
