@@ -108,6 +108,10 @@ sub challenge_crawlers {
         update_map($result, dataset("facebook"));
         return 1;
     }
+    elsif (index($ua, "Twitterbot/") > -1) {
+        update_map($result, dataset("twitter"));
+        return 1;
+    }
     elsif (index($ua, "ichiro") > -1) {
         if (index($ua, "http://help.goo.ne.jp/door/crawler.html") > -1 || index($ua, "compatible; ichiro/mobile goo;") > -1) {
             update_map($result, dataset("goo"));

@@ -53,7 +53,7 @@ sub const {
 
 my $DATASET = {};
 {
-    # GENERATED from dataset.yaml at Fri Oct 17 13:24:37 JST 2014 by tagomoris
+    # GENERATED from dataset.yaml at Tue Mar  3 21:16:26 JST 2015 by yusuke.enomoto
     my $obj;
     $obj = {label => 'MSIE', name => 'Internet Explorer', type => 'browser'};
     $obj->{vendor} = 'Microsoft';
@@ -73,6 +73,8 @@ my $DATASET = {};
     $obj = {label => 'Sleipnir', name => 'Sleipnir', type => 'browser'};
     $obj->{vendor} = 'Fenrir Inc.';
     $DATASET->{'Sleipnir'} = $obj;
+    $obj = {label => 'Webview', name => 'Webview', type => 'browser'};
+    $DATASET->{'Webview'} = $obj;
     $obj = {label => 'Win', name => 'Windows UNKNOWN Ver', type => 'os'};
     $obj->{category} = 'pc';
     $DATASET->{'Win'} = $obj;
@@ -323,6 +325,10 @@ my $DATASET = {};
     $obj->{category} = 'crawler';
     $obj->{vendor} = '';
     $DATASET->{'facebook'} = $obj;
+    $obj = {label => 'twitter', name => 'twitter', type => 'full'};
+    $obj->{category} = 'crawler';
+    $obj->{vendor} = '';
+    $DATASET->{'twitter'} = $obj;
     $obj = {label => 'mixi', name => 'mixi', type => 'full'};
     $obj->{category} = 'crawler';
     $obj->{vendor} = '';

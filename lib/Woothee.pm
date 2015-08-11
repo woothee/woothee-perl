@@ -100,6 +100,9 @@ sub try_browser {
     if (Woothee::Browser::challenge_opera($useragent, $result)) {
         return 1;
     }
+    if (Woothee::Browser::challenge_webview($useragent, $result)) {
+        return 1;
+    }
 
     return 0;
 }
