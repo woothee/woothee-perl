@@ -38,7 +38,8 @@ sub challenge_windows {
     }
 
     my $version = $1;
-    if ($version eq "NT 6.3") { $data = dataset("Win8.1"); }
+    if ($version eq "NT 10.0") { $data = dataset("Win10"); }
+    elsif ($version eq "NT 6.3") { $data = dataset("Win8.1"); }
     elsif ($version eq "NT 6.2") { $data = dataset("Win8"); }
     elsif ($version eq "NT 6.1") { $data = dataset("Win7"); }
     elsif ($version eq "NT 6.0") { $data = dataset("WinVista"); }
