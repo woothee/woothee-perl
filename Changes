@@ -2,6 +2,11 @@ Revision history for Perl module Woothee
 
 {{$NEXT}}
 
+1.2.0 2015-08-11T06:35:55Z
+   - add support Windows10, BlackBerry10
+   - add support for MS Edge, Webviews of mobile devices
+   - add support for Twitterbot
+
 1.0.1 2015-01-14T09:02:41Z
    - fix MSIE11 support
 
