@@ -145,6 +145,11 @@ sub challenge_smartphone {
         $data = dataset("Android");
     } elsif (index($ua, "CFNetwork") > -1) {
         $data = dataset("iOS");
+    } elsif (index($ua, "BB10") > -1) {
+        if ($ua =~ m!BB10(?:.+)Version/([.0-9]+)!) {
+            $os_version = $1;
+        }
+        $data = dataset("BlackBerry10");
     } elsif (index($ua, "BlackBerry") > -1) {
         if ($ua =~ m!BlackBerry(?:\d+)/([.0-9]+) !) {
             $os_version = $1;
