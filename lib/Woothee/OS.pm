@@ -292,7 +292,7 @@ __END__
 
 Woothee::OS - part of Woothee
 
-For Woothee, see https://github.com/tagomoris/woothee
+For Woothee, see L<https://github.com/woothee/woothee>
 
 =head1 DESCRIPTION
 
