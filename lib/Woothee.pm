@@ -235,7 +235,7 @@ __END__
 
 Woothee - multi-language user-agent strings parsers (perl implementation)
 
-For Woothee, see https://github.com/woothee/woothee
+For Woothee, see L<https://github.com/woothee/woothee>
 
 =head1 SYNOPSIS
 
