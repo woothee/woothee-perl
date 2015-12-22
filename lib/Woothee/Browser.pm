@@ -44,6 +44,14 @@ sub challenge_safari_chrome { # and Opera(blink)
         return 1;
     }
 
+    if ($ua =~ m{FxiOS/([.0-9]+)}o) {
+        # Firefox for iOS
+        $version = $1;
+        update_map($result, dataset("Firefox"));
+        update_version($result, $version);
+        return 1;
+    }
+
     if ($ua =~ m{(?:Chrome|CrMo|CriOS)/([.0-9]+)}o) {
         # Opera (blink)
         if ($ua =~ m{OPR/([.0-9]+)}o) {
