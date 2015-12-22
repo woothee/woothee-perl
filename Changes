@@ -2,6 +2,9 @@ Revision history for Perl module Woothee
 
 {{$NEXT}}
 
+1.3.0 2015-12-22T05:11:56Z
+   - add support for Firefox for iOS
+
 1.2.0 2015-08-11T06:35:55Z
    - add support Windows10, BlackBerry10
    - add support for MS Edge, Webviews of mobile devices

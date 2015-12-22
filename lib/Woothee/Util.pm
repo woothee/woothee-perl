@@ -6,7 +6,7 @@ use Carp;
 
 use Woothee::DataSet;
 
-our $VERSION = "1.2.0";
+our $VERSION = "1.3.0";
 
 our (@ISA, @EXPORT_OK);
 BEGIN {
