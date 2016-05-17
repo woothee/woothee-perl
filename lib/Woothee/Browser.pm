@@ -29,6 +29,21 @@ sub challenge_msie {
     return 1;
 }
 
+sub challenge_vivaldi {
+    my ($ua, $result) = @_;
+
+    return 0 if index($ua, "Vivaldi/") < 0;
+
+    my $version = Woothee::DataSet->const('VALUE_UNKNOWN');
+
+    if ($ua =~ m{Vivaldi/([.0-9]+)}o) {
+        $version = $1;
+    }
+    update_map($result, dataset('Vivaldi'));
+    update_version($result, $version);
+    return 1;
+}
+
 sub challenge_safari_chrome { # and Opera(blink)
     my ($ua,$result) = @_;
 

@@ -53,7 +53,7 @@ sub const {
 
 my $DATASET = {};
 {
-    # GENERATED from dataset.yaml at Tue Aug 11 14:50:12 JST 2015 by tagomoris
+    # GENERATED from dataset.yaml at Tue May 17 16:06:15 JST 2016 by tagomoris
     my $obj;
     $obj = {label => 'MSIE', name => 'Internet Explorer', type => 'browser'};
     $obj->{vendor} = 'Microsoft';
@@ -73,6 +73,9 @@ my $DATASET = {};
     $obj = {label => 'Opera', name => 'Opera', type => 'browser'};
     $obj->{vendor} = 'Opera';
     $DATASET->{'Opera'} = $obj;
+    $obj = {label => 'Vivaldi', name => 'Vivaldi', type => 'browser'};
+    $obj->{vendor} = 'Vivaldi Technologies';
+    $DATASET->{'Vivaldi'} = $obj;
     $obj = {label => 'Sleipnir', name => 'Sleipnir', type => 'browser'};
     $obj->{vendor} = 'Fenrir Inc.';
     $DATASET->{'Sleipnir'} = $obj;
@@ -402,7 +405,7 @@ __END__
 
 Woothee::DataSet - part of Woothee
 
-For Woothee, see L<https://github.com/woothee/woothee>
+For Woothee, see https://github.com/tagomoris/woothee
 
 =head1 DESCRIPTION
 
