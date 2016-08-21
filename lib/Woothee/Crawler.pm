@@ -88,6 +88,10 @@ sub challenge_crawlers {
             return 1;
         }
     }
+    elsif (index($ua, "BingPreview") > -1) {
+        update_map($result, dataset("BingPreview"));
+        return 1;
+    }
     elsif (index($ua, "Baidu") > -1) {
         if (index($ua, "compatible; Baiduspider") > -1 || index($ua, "Baiduspider+") > -1 || index($ua, "Baiduspider-image+") > -1) {
             update_map($result, dataset("Baiduspider"));
