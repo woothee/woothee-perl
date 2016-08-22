@@ -2,6 +2,9 @@ Revision history for Perl module Woothee
 
 {{$NEXT}}
 
+1.5.0 2016-08-22T12:06:10Z
+   - add support for BingPreview
+
 1.4.0 2016-05-17T07:08:49Z
    - add support for Vivaldi
 
