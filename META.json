@@ -66,12 +66,13 @@
          "web" : "https://github.com/woothee/woothee-perl"
       }
    },
-   "version" : "1.5.0",
+   "version" : "1.6.0",
    "x_contributors" : [
       "hitode909 <hitode909@gmail.com>",
       "yusuke-enomoto <yusuke.enomoto@dena.com>",
       "Mohammad S Anwar <mohammad.anwar@yahoo.com>",
       "tell-k <ffk2005@gmail.com>",
-      "TAGOMORI Satoshi <tagomoris@gmail.com>"
+      "Takuya Tsuchida <takuya.tsuchida@gmail.com>",
+      "Satoshi \"Moris\" Tagomori <tagomoris@gmail.com>"
    ]
 }
