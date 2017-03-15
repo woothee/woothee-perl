@@ -61,6 +61,10 @@ sub challenge_http_library {
         $data = dataset("HTTPLibrary");
         $version = "wget";
     }
+    elsif ($ua =~ m{^curl/}o) {
+        $data = dataset("HTTPLibrary");
+        $version = "curl";
+    }
     elsif ($ua =~ m{^(?:libwww-perl|WWW-Mechanize|LWP::Simple|LWP |lwp-trivial)}o) {
         $data = dataset("HTTPLibrary");
         $version = "perl";

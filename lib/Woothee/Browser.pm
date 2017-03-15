@@ -76,6 +76,11 @@ sub challenge_safari_chrome { # and Opera(blink)
             return 1;
         }
 
+        #WebView
+        if (index($ua, "wv") > -1) {
+            return 0;
+        }
+
         # Chrome
         $version = $1;
         update_map($result, dataset("Chrome"));
@@ -139,6 +144,15 @@ sub challenge_webview {
     if ($ua =~ m{iP(hone;|ad;|od) .*like Mac OS X}o) {
         return 0 if index($ua, "Safari/") > -1;
 
+        if ($ua =~ m{Version/([.0-9]+)}o) {
+            $version = $1;
+        }
+
+        update_version($result, $version);
+        update_map($result, dataset("Webview"));
+        return 1;
+    }
+    elsif (index($ua, "wv") > -1) { #WebView
         if ($ua =~ m{Version/([.0-9]+)}o) {
             $version = $1;
         }
