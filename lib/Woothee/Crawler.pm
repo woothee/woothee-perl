@@ -173,6 +173,10 @@ sub challenge_crawlers {
             return 1;
       }
     }
+    elsif (index($ua, "trendictionbot") > -1) {
+      update_map($result, dataset("trendictionbot"));
+      return 1;
+    }
 
     return 0;
 
