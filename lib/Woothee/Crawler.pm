@@ -99,7 +99,10 @@ sub challenge_crawlers {
         }
     }
     elsif (index($ua, "Yeti") > -1) {
-        if (index($ua, "http://help.naver.com/robots") > -1) {
+        if (index($ua, "http://help.naver.com/robots") > -1 ||
+            index($ua, "http://help.naver.com/support/robots.html") > -1 ||
+            index($ua, "http://naver.me/bot") > -1) {
+
             update_map($result, dataset("Yeti"));
             return 1;
         }
