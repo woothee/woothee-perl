@@ -94,6 +94,9 @@ sub try_browser {
     if (Woothee::Browser::challenge_vivaldi($useragent, $result)) {
         return 1;
     }
+    if (Woothee::Browser::challenge_yandex_browser($useragent, $result)) {
+        return 1;
+    }
     if (Woothee::Browser::challenge_safari_chrome($useragent, $result)) {
         return 1;
     }
