@@ -116,7 +116,7 @@ sub challenge_linux {
         # (Linux; U; Android-4.0.3; en-us; Galaxy Nexus Build/IML74K)
         # (Linux; Android 4.2.2; SO-01F Build/14.1.H.1.281)
         $data = dataset("Android");
-        if ($ua =~ /Android[- ](\d+\.\d+(?:\.\d+)?)/) {
+        if ($ua =~ /Android[- ](\d+(?:\.\d+(?:\.\d+)?)?)/) {
             $os_version = $1;
         }
     }else {
